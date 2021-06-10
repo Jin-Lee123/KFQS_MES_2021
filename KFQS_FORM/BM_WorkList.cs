@@ -161,12 +161,6 @@ namespace KFQS_Form
 
                 foreach(DataRow drrow in dtTemp.Rows)
                 {
-                    if (Convert.ToString(drrow["WORKID"]) == string.Empty)
-                    {
-                        this.ClosePrgForm();
-                        this.ShowDialog("작업자 ID 를 입력하세요.", DC00_WinForm.DialogForm.DialogType.OK);
-                        return;
-                    }
                     switch (drrow.RowState)
                     {
                         case DataRowState.Deleted:    //삭제
@@ -179,6 +173,12 @@ namespace KFQS_Form
                             break;
 
                         case DataRowState.Added:     //추가
+                            if (Convert.ToString(drrow["WORKERID"]) == string.Empty)
+                            {
+                                this.ClosePrgForm();
+                                this.ShowDialog("작업자 ID 를 입력하세요.", DC00_WinForm.DialogForm.DialogType.OK);
+                                return;
+                            }
                             helper.ExecuteNoneQuery("16BM_WorkList_I1"
                                                     , CommandType.StoredProcedure
                                                     , helper.CreateParameter("PLANTCODE",  Convert.ToString(drrow["PLANTCODE"]),  DbType.String, ParameterDirection.Input)
@@ -208,13 +208,14 @@ namespace KFQS_Form
                                                     , helper.CreateParameter("PHONENO", Convert.ToString(drrow["PHONENO"]), DbType.String, ParameterDirection.Input)
                                                     , helper.CreateParameter("INDATE", Convert.ToString(drrow["INDATE"]), DbType.String, ParameterDirection.Input)
                                                     , helper.CreateParameter("OUTDATE", Convert.ToString(drrow["OUTDATE"]), DbType.String, ParameterDirection.Input)
-                                                    , helper.CreateParameter("MAKER", LoginInfo.UserID, DbType.String, ParameterDirection.Input)
+                                                    , helper.CreateParameter("EDITOR", LoginInfo.UserID, DbType.String, ParameterDirection.Input)
                                                     );
                             break;
                     }
                 }
                 if (helper.RSCODE == "S")
                 {
+                    string s = helper.RSMSG;
                     helper.Commit();
                     this.ShowDialog("정상적으로 등록 되었습니다.", DC00_WinForm.DialogForm.DialogType.OK);
                     DoInquire();

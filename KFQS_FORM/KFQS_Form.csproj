@@ -46,11 +46,65 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.designer.cs">
+      <DependentUpon>AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_ActureOutPut[생산실적등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_ActureOutPut[생산실적등록].designer.cs">
+      <DependentUpon>PP_ActureOutPut[생산실적등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="MM_StockOUT[자재 생산 출고 관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockOUT[자재 생산 출고 관리].designer.cs">
+      <DependentUpon>MM_StockOUT[자재 생산 출고 관리].cs</DependentUpon>
+    </Compile>
+    <Compile Include="MM_StockMM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockMM.Designer.cs">
+      <DependentUpon>MM_StockMM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MM_PoMake[재자 발주 및 입고].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_PoMake[재자 발주 및 입고].Designer.cs">
+      <DependentUpon>MM_PoMake[재자 발주 및 입고].cs</DependentUpon>
+    </Compile>
     <Compile Include="BM_WorkList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BM_WorkList.Designer.cs">
       <DependentUpon>BM_WorkList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MM_STockMM_M[자재 재고관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_STockMM_M[자재 재고관리].designer.cs">
+      <DependentUpon>MM_STockMM_M[자재 재고관리].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_StockPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_StockPP.designer.cs">
+      <DependentUpon>PP_StockPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MM_StockOut_M[자재 출고 등록].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MM_StockOut_M[자재 출고 등록].designer.cs">
+      <DependentUpon>MM_StockOut_M[자재 출고 등록].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_STockPP_M[공정 재고관리].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_STockPP_M[공정 재고관리].designer.cs">
+      <DependentUpon>PP_STockPP_M[공정 재고관리].cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -115,8 +169,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.resx">
+      <DependentUpon>AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_ActureOutPut[생산실적등록].resx">
+      <DependentUpon>PP_ActureOutPut[생산실적등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_StockOUT[자재 생산 출고 관리].resx">
+      <DependentUpon>MM_StockOUT[자재 생산 출고 관리].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_StockMM.resx">
+      <DependentUpon>MM_StockMM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_PoMake[재자 발주 및 입고].resx">
+      <DependentUpon>MM_PoMake[재자 발주 및 입고].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BM_WorkList.resx">
       <DependentUpon>BM_WorkList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_STockMM_M[자재 재고관리].resx">
+      <DependentUpon>MM_STockMM_M[자재 재고관리].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_StockPP.resx">
+      <DependentUpon>PP_StockPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MM_StockOut_M[자재 출고 등록].resx">
+      <DependentUpon>MM_StockOut_M[자재 출고 등록].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_STockPP_M[공정 재고관리].resx">
+      <DependentUpon>PP_STockPP_M[공정 재고관리].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
