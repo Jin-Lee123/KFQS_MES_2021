@@ -43,12 +43,12 @@
             Infragistics.Win.Appearance appearance59 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance61 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton2 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton3 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton4 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             this.lblPlantCode = new DC00_Component.SLabel();
             this.lblItemCode = new DC00_Component.SLabel();
             this.cboPlantCode = new Infragistics.Win.UltraWinEditors.UltraComboEditor();
@@ -61,22 +61,22 @@
             this.dtpStart = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
             this.dtpEnd = new Infragistics.Win.UltraWinSchedule.UltraCalendarCombo();
             this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.txtWorkerID = new DC00_Component.SBtnTextEditor();
-            this.txtWorkerName = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-            this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
-            this.btnWorker = new Infragistics.Win.Misc.UltraButton();
-            this.ultraLabel3 = new Infragistics.Win.Misc.UltraLabel();
-            this.ultraGroupBox2 = new Infragistics.Win.Misc.UltraGroupBox();
-            this.txtInLotNo = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-            this.sLabel1 = new DC00_Component.SLabel();
-            this.btnLotIn = new Infragistics.Win.Misc.UltraButton();
-            this.btnRunStop = new Infragistics.Win.Misc.UltraButton();
-            this.txtProduct = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-            this.sLabel2 = new DC00_Component.SLabel();
+            this.btnOrderClose = new Infragistics.Win.Misc.UltraButton();
+            this.btnProduct = new Infragistics.Win.Misc.UltraButton();
             this.txtBad = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.sLabel3 = new DC00_Component.SLabel();
-            this.btnProduct = new Infragistics.Win.Misc.UltraButton();
-            this.btnOrderClose = new Infragistics.Win.Misc.UltraButton();
+            this.txtProduct = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+            this.sLabel2 = new DC00_Component.SLabel();
+            this.btnRunStop = new Infragistics.Win.Misc.UltraButton();
+            this.ultraGroupBox2 = new Infragistics.Win.Misc.UltraGroupBox();
+            this.btnLotIn = new Infragistics.Win.Misc.UltraButton();
+            this.txtInLotNo = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+            this.sLabel1 = new DC00_Component.SLabel();
+            this.ultraLabel3 = new Infragistics.Win.Misc.UltraLabel();
+            this.btnWorker = new Infragistics.Win.Misc.UltraButton();
+            this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
+            this.txtWorkerName = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+            this.txtWorkerID = new DC00_Component.SBtnTextEditor();
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).BeginInit();
             this.gbxHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbxBody)).BeginInit();
@@ -89,13 +89,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
             this.ultraGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox2)).BeginInit();
             this.ultraGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtInLotNo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerID)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxHeader
@@ -258,6 +258,7 @@
             this.grid1.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnCellChange;
             this.grid1.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
             this.grid1.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+            this.grid1.AfterRowActivate += new System.EventHandler(this.grid1_AfterRowActivate);
             // 
             // txtOrderNo
             // 
@@ -312,7 +313,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.DateButtons.Add(dateButton1);
+            this.dtpStart.DateButtons.Add(dateButton3);
             this.dtpStart.Location = new System.Drawing.Point(686, 27);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.NonAutoSizeHeight = 32;
@@ -321,7 +322,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.DateButtons.Add(dateButton2);
+            this.dtpEnd.DateButtons.Add(dateButton4);
             this.dtpEnd.Location = new System.Drawing.Point(856, 27);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.NonAutoSizeHeight = 32;
@@ -350,134 +351,21 @@
             this.ultraGroupBox1.TabIndex = 192;
             this.ultraGroupBox1.Text = "생산실적";
             // 
-            // txtWorkerID
+            // btnOrderClose
             // 
-            appearance2.FontData.BoldAsString = "False";
-            appearance2.FontData.UnderlineAsString = "False";
-            appearance2.ForeColor = System.Drawing.Color.Black;
-            this.txtWorkerID.Appearance = appearance2;
-            this.txtWorkerID.btnImgType = DC00_Component.SBtnTextEditor.ButtonImgTypeEnum.Type1;
-            this.txtWorkerID.btnWidth = 26;
-            this.txtWorkerID.Location = new System.Drawing.Point(105, 44);
-            this.txtWorkerID.Name = "txtWorkerID";
-            this.txtWorkerID.RequireFlag = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
-            this.txtWorkerID.RequirePop = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
-            this.txtWorkerID.Size = new System.Drawing.Size(147, 35);
-            this.txtWorkerID.TabIndex = 0;
+            this.btnOrderClose.Location = new System.Drawing.Point(895, 155);
+            this.btnOrderClose.Name = "btnOrderClose";
+            this.btnOrderClose.Size = new System.Drawing.Size(149, 30);
+            this.btnOrderClose.TabIndex = 203;
+            this.btnOrderClose.Text = "작업 지시 종료";
             // 
-            // txtWorkerName
+            // btnProduct
             // 
-            this.txtWorkerName.AutoSize = false;
-            this.txtWorkerName.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.txtWorkerName.Location = new System.Drawing.Point(259, 44);
-            this.txtWorkerName.Name = "txtWorkerName";
-            this.txtWorkerName.Size = new System.Drawing.Size(234, 35);
-            this.txtWorkerName.TabIndex = 186;
-            // 
-            // ultraLabel1
-            // 
-            this.ultraLabel1.Location = new System.Drawing.Point(32, 47);
-            this.ultraLabel1.Name = "ultraLabel1";
-            this.ultraLabel1.Size = new System.Drawing.Size(70, 28);
-            this.ultraLabel1.TabIndex = 192;
-            this.ultraLabel1.Text = "작업자";
-            // 
-            // btnWorker
-            // 
-            this.btnWorker.Location = new System.Drawing.Point(515, 44);
-            this.btnWorker.Name = "btnWorker";
-            this.btnWorker.Size = new System.Drawing.Size(130, 34);
-            this.btnWorker.TabIndex = 193;
-            this.btnWorker.Text = "작업자 등록";
-            // 
-            // ultraLabel3
-            // 
-            this.ultraLabel3.Location = new System.Drawing.Point(651, 33);
-            this.ultraLabel3.Name = "ultraLabel3";
-            this.ultraLabel3.Size = new System.Drawing.Size(218, 56);
-            this.ultraLabel3.TabIndex = 194;
-            this.ultraLabel3.Text = "반드시 작업자를 선택후 작업 진행 할것";
-            // 
-            // ultraGroupBox2
-            // 
-            this.ultraGroupBox2.Controls.Add(this.btnLotIn);
-            this.ultraGroupBox2.Controls.Add(this.txtInLotNo);
-            this.ultraGroupBox2.Controls.Add(this.sLabel1);
-            this.ultraGroupBox2.Location = new System.Drawing.Point(19, 84);
-            this.ultraGroupBox2.Name = "ultraGroupBox2";
-            this.ultraGroupBox2.Size = new System.Drawing.Size(474, 119);
-            this.ultraGroupBox2.TabIndex = 195;
-            this.ultraGroupBox2.Text = "LOT 투입";
-            // 
-            // txtInLotNo
-            // 
-            this.txtInLotNo.AutoSize = false;
-            this.txtInLotNo.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.txtInLotNo.Location = new System.Drawing.Point(136, 57);
-            this.txtInLotNo.Name = "txtInLotNo";
-            this.txtInLotNo.Size = new System.Drawing.Size(195, 34);
-            this.txtInLotNo.TabIndex = 187;
-            // 
-            // sLabel1
-            // 
-            appearance3.FontData.BoldAsString = "False";
-            appearance3.FontData.UnderlineAsString = "False";
-            appearance3.ForeColor = System.Drawing.Color.Black;
-            appearance3.TextHAlignAsString = "Right";
-            appearance3.TextVAlignAsString = "Middle";
-            this.sLabel1.Appearance = appearance3;
-            this.sLabel1.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
-            this.sLabel1.DbField = "cboUseFlag";
-            this.sLabel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel1.Location = new System.Drawing.Point(13, 63);
-            this.sLabel1.Name = "sLabel1";
-            this.sLabel1.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.sLabel1.Size = new System.Drawing.Size(117, 23);
-            this.sLabel1.TabIndex = 188;
-            this.sLabel1.Text = "투입 LOT번호";
-            // 
-            // btnLotIn
-            // 
-            this.btnLotIn.Location = new System.Drawing.Point(337, 57);
-            this.btnLotIn.Name = "btnLotIn";
-            this.btnLotIn.Size = new System.Drawing.Size(99, 34);
-            this.btnLotIn.TabIndex = 194;
-            this.btnLotIn.Text = "투입";
-            // 
-            // btnRunStop
-            // 
-            this.btnRunStop.Location = new System.Drawing.Point(515, 95);
-            this.btnRunStop.Name = "btnRunStop";
-            this.btnRunStop.Size = new System.Drawing.Size(130, 108);
-            this.btnRunStop.TabIndex = 196;
-            this.btnRunStop.Text = "가동";
-            // 
-            // txtProduct
-            // 
-            this.txtProduct.AutoSize = false;
-            this.txtProduct.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.txtProduct.Location = new System.Drawing.Point(744, 109);
-            this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(145, 27);
-            this.txtProduct.TabIndex = 197;
-            // 
-            // sLabel2
-            // 
-            appearance5.FontData.BoldAsString = "False";
-            appearance5.FontData.UnderlineAsString = "False";
-            appearance5.ForeColor = System.Drawing.Color.Black;
-            appearance5.TextHAlignAsString = "Right";
-            appearance5.TextVAlignAsString = "Middle";
-            this.sLabel2.Appearance = appearance5;
-            this.sLabel2.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
-            this.sLabel2.DbField = "cboUseFlag";
-            this.sLabel2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel2.Location = new System.Drawing.Point(651, 111);
-            this.sLabel2.Name = "sLabel2";
-            this.sLabel2.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
-            this.sLabel2.Size = new System.Drawing.Size(87, 23);
-            this.sLabel2.TabIndex = 198;
-            this.sLabel2.Text = "양품 수량";
+            this.btnProduct.Location = new System.Drawing.Point(895, 106);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(149, 30);
+            this.btnProduct.TabIndex = 201;
+            this.btnProduct.Text = "생산 실적 등록";
             // 
             // txtBad
             // 
@@ -506,21 +394,137 @@
             this.sLabel3.TabIndex = 200;
             this.sLabel3.Text = "불량 수량";
             // 
-            // btnProduct
+            // txtProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(895, 106);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(149, 30);
-            this.btnProduct.TabIndex = 201;
-            this.btnProduct.Text = "생산 실적 등록";
+            this.txtProduct.AutoSize = false;
+            this.txtProduct.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.txtProduct.Location = new System.Drawing.Point(744, 109);
+            this.txtProduct.Name = "txtProduct";
+            this.txtProduct.Size = new System.Drawing.Size(145, 27);
+            this.txtProduct.TabIndex = 197;
             // 
-            // btnOrderClose
+            // sLabel2
             // 
-            this.btnOrderClose.Location = new System.Drawing.Point(895, 155);
-            this.btnOrderClose.Name = "btnOrderClose";
-            this.btnOrderClose.Size = new System.Drawing.Size(149, 30);
-            this.btnOrderClose.TabIndex = 203;
-            this.btnOrderClose.Text = "작업 지시 종료";
+            appearance5.FontData.BoldAsString = "False";
+            appearance5.FontData.UnderlineAsString = "False";
+            appearance5.ForeColor = System.Drawing.Color.Black;
+            appearance5.TextHAlignAsString = "Right";
+            appearance5.TextVAlignAsString = "Middle";
+            this.sLabel2.Appearance = appearance5;
+            this.sLabel2.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
+            this.sLabel2.DbField = "cboUseFlag";
+            this.sLabel2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel2.Location = new System.Drawing.Point(651, 111);
+            this.sLabel2.Name = "sLabel2";
+            this.sLabel2.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel2.Size = new System.Drawing.Size(87, 23);
+            this.sLabel2.TabIndex = 198;
+            this.sLabel2.Text = "양품 수량";
+            // 
+            // btnRunStop
+            // 
+            this.btnRunStop.Location = new System.Drawing.Point(515, 95);
+            this.btnRunStop.Name = "btnRunStop";
+            this.btnRunStop.Size = new System.Drawing.Size(130, 108);
+            this.btnRunStop.TabIndex = 196;
+            this.btnRunStop.Text = "가동";
+            this.btnRunStop.Click += new System.EventHandler(this.btnRunStop_Click);
+            // 
+            // ultraGroupBox2
+            // 
+            this.ultraGroupBox2.Controls.Add(this.btnLotIn);
+            this.ultraGroupBox2.Controls.Add(this.txtInLotNo);
+            this.ultraGroupBox2.Controls.Add(this.sLabel1);
+            this.ultraGroupBox2.Location = new System.Drawing.Point(19, 84);
+            this.ultraGroupBox2.Name = "ultraGroupBox2";
+            this.ultraGroupBox2.Size = new System.Drawing.Size(474, 119);
+            this.ultraGroupBox2.TabIndex = 195;
+            this.ultraGroupBox2.Text = "LOT 투입";
+            // 
+            // btnLotIn
+            // 
+            this.btnLotIn.Location = new System.Drawing.Point(337, 57);
+            this.btnLotIn.Name = "btnLotIn";
+            this.btnLotIn.Size = new System.Drawing.Size(99, 34);
+            this.btnLotIn.TabIndex = 194;
+            this.btnLotIn.Text = "투입";
+            this.btnLotIn.Click += new System.EventHandler(this.btnLotIn_Click);
+            // 
+            // txtInLotNo
+            // 
+            this.txtInLotNo.AutoSize = false;
+            this.txtInLotNo.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.txtInLotNo.Location = new System.Drawing.Point(136, 57);
+            this.txtInLotNo.Name = "txtInLotNo";
+            this.txtInLotNo.Size = new System.Drawing.Size(195, 34);
+            this.txtInLotNo.TabIndex = 187;
+            // 
+            // sLabel1
+            // 
+            appearance3.FontData.BoldAsString = "False";
+            appearance3.FontData.UnderlineAsString = "False";
+            appearance3.ForeColor = System.Drawing.Color.Black;
+            appearance3.TextHAlignAsString = "Right";
+            appearance3.TextVAlignAsString = "Middle";
+            this.sLabel1.Appearance = appearance3;
+            this.sLabel1.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
+            this.sLabel1.DbField = "cboUseFlag";
+            this.sLabel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sLabel1.Location = new System.Drawing.Point(13, 63);
+            this.sLabel1.Name = "sLabel1";
+            this.sLabel1.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
+            this.sLabel1.Size = new System.Drawing.Size(117, 23);
+            this.sLabel1.TabIndex = 188;
+            this.sLabel1.Text = "투입 LOT번호";
+            // 
+            // ultraLabel3
+            // 
+            this.ultraLabel3.Location = new System.Drawing.Point(651, 33);
+            this.ultraLabel3.Name = "ultraLabel3";
+            this.ultraLabel3.Size = new System.Drawing.Size(218, 56);
+            this.ultraLabel3.TabIndex = 194;
+            this.ultraLabel3.Text = "반드시 작업자를 선택후 작업 진행 할것";
+            // 
+            // btnWorker
+            // 
+            this.btnWorker.Location = new System.Drawing.Point(515, 44);
+            this.btnWorker.Name = "btnWorker";
+            this.btnWorker.Size = new System.Drawing.Size(130, 34);
+            this.btnWorker.TabIndex = 193;
+            this.btnWorker.Text = "작업자 등록";
+            this.btnWorker.Click += new System.EventHandler(this.btnWorker_Click);
+            // 
+            // ultraLabel1
+            // 
+            this.ultraLabel1.Location = new System.Drawing.Point(32, 47);
+            this.ultraLabel1.Name = "ultraLabel1";
+            this.ultraLabel1.Size = new System.Drawing.Size(70, 28);
+            this.ultraLabel1.TabIndex = 192;
+            this.ultraLabel1.Text = "작업자";
+            // 
+            // txtWorkerName
+            // 
+            this.txtWorkerName.AutoSize = false;
+            this.txtWorkerName.Font = new System.Drawing.Font("맑은 고딕", 10F);
+            this.txtWorkerName.Location = new System.Drawing.Point(259, 44);
+            this.txtWorkerName.Name = "txtWorkerName";
+            this.txtWorkerName.Size = new System.Drawing.Size(234, 35);
+            this.txtWorkerName.TabIndex = 186;
+            // 
+            // txtWorkerID
+            // 
+            appearance2.FontData.BoldAsString = "False";
+            appearance2.FontData.UnderlineAsString = "False";
+            appearance2.ForeColor = System.Drawing.Color.Black;
+            this.txtWorkerID.Appearance = appearance2;
+            this.txtWorkerID.btnImgType = DC00_Component.SBtnTextEditor.ButtonImgTypeEnum.Type1;
+            this.txtWorkerID.btnWidth = 26;
+            this.txtWorkerID.Location = new System.Drawing.Point(105, 44);
+            this.txtWorkerID.Name = "txtWorkerID";
+            this.txtWorkerID.RequireFlag = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
+            this.txtWorkerID.RequirePop = DC00_Component.SBtnTextEditor.RequireFlagEnum.NO;
+            this.txtWorkerID.Size = new System.Drawing.Size(147, 35);
+            this.txtWorkerID.TabIndex = 0;
             // 
             // PP_ActureOutPut
             // 
@@ -543,13 +547,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).EndInit();
             this.ultraGroupBox1.ResumeLayout(false);
             this.ultraGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox2)).EndInit();
             this.ultraGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtInLotNo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWorkerID)).EndInit();
             this.ResumeLayout(false);
 
         }
