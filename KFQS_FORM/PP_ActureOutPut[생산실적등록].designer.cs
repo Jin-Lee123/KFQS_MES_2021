@@ -358,6 +358,7 @@
             this.btnOrderClose.Size = new System.Drawing.Size(149, 30);
             this.btnOrderClose.TabIndex = 203;
             this.btnOrderClose.Text = "작업 지시 종료";
+            this.btnOrderClose.Click += new System.EventHandler(this.btnOrderClose_Click);
             // 
             // btnProduct
             // 
@@ -366,6 +367,7 @@
             this.btnProduct.Size = new System.Drawing.Size(149, 30);
             this.btnProduct.TabIndex = 201;
             this.btnProduct.Text = "생산 실적 등록";
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // txtBad
             // 
