@@ -50,7 +50,7 @@ namespace KFQS_Form
             _GridUtil.InitColumnUltraGrid(grid1, "ITEMCODE",        "품목",           false, GridColDataType_emu.VarChar, 110, 100, Infragistics.Win.HAlign.Left,   true, false, null, null, null, null, null);
             _GridUtil.InitColumnUltraGrid(grid1, "ITEMNAME",        "품목명",         false, GridColDataType_emu.VarChar, 170, 100, Infragistics.Win.HAlign.Left,   true, false, null, null, null, null, null);
             _GridUtil.InitColumnUltraGrid(grid1, "ITEMTYPE",        "품목구분",       false, GridColDataType_emu.VarChar, 110, 100, Infragistics.Win.HAlign.Left,   true, false, null, null, null, null, null);
-            _GridUtil.InitColumnUltraGrid(grid1, "MATLOTNO",        "LOTNO",          false, GridColDataType_emu.VarChar, 110, 100, Infragistics.Win.HAlign.Left,   true, false, null, null, null, null, null);
+            _GridUtil.InitColumnUltraGrid(grid1, "MATLOTNO",            "LOTNO",         false, GridColDataType_emu.VarChar, 110, 100, Infragistics.Win.HAlign.Left,   true, false, null, null, null, null, null);
             _GridUtil.InitColumnUltraGrid(grid1, "WHCODE",          "입고창고",       false, GridColDataType_emu.VarChar,  70, 100, Infragistics.Win.HAlign.Right,  true, false, null, null, null, null, null);
             _GridUtil.InitColumnUltraGrid(grid1, "STOCKQTY",        "재고수량",       false, GridColDataType_emu.VarChar,  50, 100, Infragistics.Win.HAlign.Center, true, false, null, null, null, null, null);
             _GridUtil.InitColumnUltraGrid(grid1, "UNITCODE",        "단위",           false, GridColDataType_emu.VarChar, 100, 100, Infragistics.Win.HAlign.Center, false, false, null, null, null, null, null);
@@ -92,7 +92,7 @@ namespace KFQS_Form
                 rtnDtTemp = helper.FillTable("16PP_StockPP_S1", CommandType.StoredProcedure
                                               , helper.CreateParameter("PLANTCODE",  sPlantCode,      DbType.String, ParameterDirection.Input)
                                               , helper.CreateParameter("ITEMCODE",   sItemCode,       DbType.String, ParameterDirection.Input)
-                                              , helper.CreateParameter("MATLOTNO",   sLotNo,          DbType.String, ParameterDirection.Input)
+                                              , helper.CreateParameter("LOTNO",   sLotNo,          DbType.String, ParameterDirection.Input)
                                               );
                 
                 grid1.DataSource = rtnDtTemp;
@@ -136,7 +136,7 @@ namespace KFQS_Form
                     helper.ExecuteNoneQuery("16PP_StockPP_I1"
                                             , CommandType.StoredProcedure
                                             , helper.CreateParameter("PLANTCODE", Convert.ToString(dt.Rows[i]["PLANTCODE"]), DbType.String, ParameterDirection.Input)
-                                            , helper.CreateParameter("LOTNO",     Convert.ToString(dt.Rows[i]["MATLOTNO"]), DbType.String, ParameterDirection.Input)
+                                            , helper.CreateParameter("LOTNO",     Convert.ToString(dt.Rows[i]["LOTNO"]), DbType.String, ParameterDirection.Input)
                                             , helper.CreateParameter("ITEMCODE",  Convert.ToString(dt.Rows[i]["ITEMCODE"]), DbType.String, ParameterDirection.Input)
                                             , helper.CreateParameter("QTY",       Convert.ToString(dt.Rows[i]["STOCKQTY"]), DbType.String, ParameterDirection.Input)
                                             , helper.CreateParameter("UNITCODE",  Convert.ToString(dt.Rows[i]["UNITCODE"]), DbType.String, ParameterDirection.Input)
@@ -164,7 +164,52 @@ namespace KFQS_Form
                 helper.Close();
             }
         }
+        
+        // lot 발행
+        private void ultraButton1_Click(object sender, EventArgs e)
+        {
+            if (grid1.ActiveRow == null) return;
+            if (Convert.ToString(this.grid1.ActiveRow.Cells["ITEMTYPE"].Value) == "FERT")
+            {
+                DBHelper helper = new DBHelper(false);
+                try
+                {
+                    string sPlantCode = Convert.ToString(grid1.ActiveRow.Cells["PLANTCODE"].Value);
+                    string sLotNo     = Convert.ToString(grid1.ActiveRow.Cells["LOTNO"].Value);
 
+                    DataTable dtTemp = helper.FillTable("16PP_StockPP_S2", CommandType.StoredProcedure
+                                                         , helper.CreateParameter("PLANTCODE", sPlantCode, DbType.String, ParameterDirection.Input)
+                                                         , helper.CreateParameter("LOTNO",     sLotNo,     DbType.String, ParameterDirection.Input)
+                                                         );
+                    if(dtTemp.Rows.Count == 0)
+                    {
+                        ShowDialog("바코드 정보를 조회 할 내용이 없습니다.", DialogForm.DialogType.OK);
+                        return;
+                    }
+                    // 바코드 디자인 선언
+                    Report_LotBacodeFERT sReportFert = new Report_LotBacodeFERT();
+                    // 바코드 디자인이 첨부될 레포트 북 클래스 선언
+                    Telerik.Reporting.ReportBook repBook = new Telerik.Reporting.ReportBook();
+                    // 바코드 디자인에 데이터 바인딩
+                    sReportFert.DataSource = dtTemp;
+                    // 레포트 북에 디자인 추가
+                    repBook.Reports.Add(sReportFert);
+                    
+                    // 레포트 미리보기 창에 레포트 북 등록 및 출력 장수 입력
+                    ReportViewer BarcodeViewer = new ReportViewer(repBook, 1);
+                    // 미리보기 창 호출
+                    BarcodeViewer.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    ShowDialog(ex.ToString());
+                }
+                finally
+                {
+                    helper.Close();
+                }
+            }
+        }
     }
 }
 

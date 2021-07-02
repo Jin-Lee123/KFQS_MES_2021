@@ -1,6 +1,6 @@
 ﻿namespace KFQS_Form
 {
-    partial class PP_WCTRunStopList_M
+    partial class ER_RepairUpdate
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -42,8 +42,8 @@
             Infragistics.Win.Appearance appearance59 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance61 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance98 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton1 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
-            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton2 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton3 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
+            Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton dateButton4 = new Infragistics.Win.UltraWinSchedule.CalendarCombo.DateButton();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance51 = new Infragistics.Win.Appearance();
             this.lblPlantCode = new DC00_Component.SLabel();
@@ -104,7 +104,7 @@
             this.lblPlantCode.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
             this.lblPlantCode.DbField = null;
             this.lblPlantCode.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPlantCode.Location = new System.Drawing.Point(-32, 29);
+            this.lblPlantCode.Location = new System.Drawing.Point(-32, 24);
             this.lblPlantCode.Name = "lblPlantCode";
             this.lblPlantCode.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.lblPlantCode.Size = new System.Drawing.Size(83, 23);
@@ -116,7 +116,7 @@
             this.cboPlantCode.Font = new System.Drawing.Font("맑은 고딕", 10F);
             this.cboPlantCode.Location = new System.Drawing.Point(57, 22);
             this.cboPlantCode.Name = "cboPlantCode";
-            this.cboPlantCode.Size = new System.Drawing.Size(145, 32);
+            this.cboPlantCode.Size = new System.Drawing.Size(258, 32);
             this.cboPlantCode.TabIndex = 0;
             // 
             // grid1
@@ -205,7 +205,6 @@
             this.grid1.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnCellChange;
             this.grid1.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
             this.grid1.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
-            this.grid1.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grid1_InitializeLayout);
             // 
             // lblDate
             // 
@@ -217,7 +216,7 @@
             this.lblDate.Appearance = appearance98;
             this.lblDate.DbField = null;
             this.lblDate.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblDate.Location = new System.Drawing.Point(462, 23);
+            this.lblDate.Location = new System.Drawing.Point(752, 21);
             this.lblDate.Name = "lblDate";
             this.lblDate.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.lblDate.Size = new System.Drawing.Size(92, 27);
@@ -226,8 +225,8 @@
             // 
             // dtEnd_H
             // 
-            this.dtEnd_H.DateButtons.Add(dateButton1);
-            this.dtEnd_H.Location = new System.Drawing.Point(718, 20);
+            this.dtEnd_H.DateButtons.Add(dateButton3);
+            this.dtEnd_H.Location = new System.Drawing.Point(1008, 18);
             this.dtEnd_H.Name = "dtEnd_H";
             this.dtEnd_H.NonAutoSizeHeight = 26;
             this.dtEnd_H.Size = new System.Drawing.Size(144, 32);
@@ -235,13 +234,13 @@
             // 
             // dtStart_H
             // 
-            this.dtStart_H.DateButtons.Add(dateButton2);
-            this.dtStart_H.Location = new System.Drawing.Point(555, 20);
+            this.dtStart_H.DateButtons.Add(dateButton4);
+            this.dtStart_H.Location = new System.Drawing.Point(845, 18);
             this.dtStart_H.Name = "dtStart_H";
             this.dtStart_H.NonAutoSizeHeight = 26;
             this.dtStart_H.Size = new System.Drawing.Size(139, 32);
             this.dtStart_H.TabIndex = 608;
-            this.dtStart_H.Value = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
+            this.dtStart_H.Value = "2021-06-01";
             // 
             // sLabel4
             // 
@@ -253,7 +252,7 @@
             this.sLabel4.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
             this.sLabel4.DbField = null;
             this.sLabel4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel4.Location = new System.Drawing.Point(695, 21);
+            this.sLabel4.Location = new System.Drawing.Point(985, 19);
             this.sLabel4.Name = "sLabel4";
             this.sLabel4.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel4.Size = new System.Drawing.Size(22, 26);
@@ -271,7 +270,7 @@
             this.sLabel1.BorderStyleInner = Infragistics.Win.UIElementBorderStyle.None;
             this.sLabel1.DbField = null;
             this.sLabel1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.sLabel1.Location = new System.Drawing.Point(224, 23);
+            this.sLabel1.Location = new System.Drawing.Point(356, 22);
             this.sLabel1.Name = "sLabel1";
             this.sLabel1.RequireFlag = DC00_Component.SLabel.RequireFlagEnum.NO;
             this.sLabel1.Size = new System.Drawing.Size(65, 25);
@@ -281,18 +280,18 @@
             // cboWorkcenterCode
             // 
             this.cboWorkcenterCode.Font = new System.Drawing.Font("맑은 고딕", 10F);
-            this.cboWorkcenterCode.Location = new System.Drawing.Point(290, 21);
+            this.cboWorkcenterCode.Location = new System.Drawing.Point(427, 19);
             this.cboWorkcenterCode.Name = "cboWorkcenterCode";
-            this.cboWorkcenterCode.Size = new System.Drawing.Size(155, 32);
+            this.cboWorkcenterCode.Size = new System.Drawing.Size(269, 32);
             this.cboWorkcenterCode.TabIndex = 612;
             // 
-            // PP_WCTRunStopList_M
+            // ER_RepairUpdate
             // 
             this.ClientSize = new System.Drawing.Size(1298, 778);
-            this.Name = "PP_WCTRunStopList_M";
+            this.Name = "ER_RepairUpdate";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Text = "작업장 별 가동/비가동 현황 및 사유 관리";
-            this.Load += new System.EventHandler(this.PP_WCTRunStopList_M_Load);
+            this.Text = "고장,수리 등록화면";
+            this.Load += new System.EventHandler(this.ER_RepairUpdate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbxHeader)).EndInit();
             this.gbxHeader.ResumeLayout(false);
             this.gbxHeader.PerformLayout();

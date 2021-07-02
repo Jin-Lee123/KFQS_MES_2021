@@ -237,7 +237,15 @@ namespace KFQS_Form
                 helper.Close();
             }
         }
-        #endregion 
+        #endregion
+
+        private void grid1_InitializeLayout(object sender, InitializeLayoutEventArgs e)
+        {
+            // 그리드 컬럼간 머지 합병 기능 적용
+            CustomMergedCellEvalutor CM1 = new CustomMergedCellEvalutor("ORDERNO", "ITMECODE");
+            e.Layout.Bands[0].Columns["ITEMCODE"].MergedCellEvaluator = CM1;
+            e.Layout.Bands[0].Columns["ITEMNAME"].MergedCellEvaluator = CM1;
+        }
     }
 }
 
