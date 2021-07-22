@@ -52,6 +52,12 @@
     <Compile Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.designer.cs">
       <DependentUpon>AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs</DependentUpon>
     </Compile>
+    <Compile Include="AP_ProductPlan_N[생산계획 편성].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AP_ProductPlan_N[생산계획 편성].designer.cs">
+      <DependentUpon>AP_ProductPlan_N[생산계획 편성].cs</DependentUpon>
+    </Compile>
     <Compile Include="BM_CheckList[검사 항목 마스터].cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.resx">
       <DependentUpon>AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AP_ProductPlan_N[생산계획 편성].resx">
+      <DependentUpon>AP_ProductPlan_N[생산계획 편성].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BM_CheckList[검사 항목 마스터].resx">
       <DependentUpon>BM_CheckList[검사 항목 마스터].cs</DependentUpon>

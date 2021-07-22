@@ -406,6 +406,7 @@
             this.grid1.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnCellChange;
             this.grid1.UseFlatMode = Infragistics.Win.DefaultableBoolean.True;
             this.grid1.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
+            this.grid1.AfterRowActivate += new System.EventHandler(this.grid1_AfterRowActivate);
             // 
             // ultraSplitter1
             // 
