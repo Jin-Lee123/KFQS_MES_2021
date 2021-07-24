@@ -46,6 +46,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AP_ProductOrder[작업지시 관리 및 생산 현황].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AP_ProductOrder[작업지시 관리 및 생산 현황].designer.cs">
+      <DependentUpon>AP_ProductOrder[작업지시 관리 및 생산 현황].cs</DependentUpon>
+    </Compile>
     <Compile Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="MM_StockMMRec[원자재 입출 이력].designer.cs">
       <DependentUpon>MM_StockMMRec[원자재 입출 이력].cs</DependentUpon>
+    </Compile>
+    <Compile Include="PP_ActureOutPut_N[생산 실적 등록%282차%29] .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_ActureOutPut_N[생산 실적 등록%282차%29] .Designer.cs">
+      <DependentUpon>PP_ActureOutPut_N[생산 실적 등록%282차%29] .cs</DependentUpon>
     </Compile>
     <Compile Include="PP_ActureOutPut[생산 실적 등록].cs">
       <SubType>Form</SubType>
@@ -147,6 +159,12 @@
     </Compile>
     <Compile Include="BM_WorkcenterPerItem[작업장 별 품목 마스터].designer.cs">
       <DependentUpon>BM_WorkcenterPerItem[작업장 별 품목 마스터].cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewr2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewr2.Designer.cs">
+      <DependentUpon>ReportViewr2.cs</DependentUpon>
     </Compile>
     <Compile Include="WM_InspectionPerItem[품목별 검사항목 마스터].cs">
       <SubType>Form</SubType>
@@ -343,6 +361,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AP_ProductOrder[작업지시 관리 및 생산 현황].resx">
+      <DependentUpon>AP_ProductOrder[작업지시 관리 및 생산 현황].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.resx">
       <DependentUpon>AP_ProductPlan[생산 계획 및 확정] - 복사본 - 복사본.cs</DependentUpon>
     </EmbeddedResource>
@@ -366,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MM_StockMMRec[원자재 입출 이력].resx">
       <DependentUpon>MM_StockMMRec[원자재 입출 이력].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_ActureOutPut_N[생산 실적 등록%282차%29] .resx">
+      <DependentUpon>PP_ActureOutPut_N[생산 실적 등록%282차%29] .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PP_ActureOutPut[생산 실적 등록].resx">
       <DependentUpon>PP_ActureOutPut[생산 실적 등록].cs</DependentUpon>
@@ -393,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BM_WorkcenterPerItem[작업장 별 품목 마스터].resx">
       <DependentUpon>BM_WorkcenterPerItem[작업장 별 품목 마스터].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewr2.resx">
+      <DependentUpon>ReportViewr2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WM_InspectionPerItem[품목별 검사항목 마스터].resx">
       <DependentUpon>WM_InspectionPerItem[품목별 검사항목 마스터].cs</DependentUpon>
