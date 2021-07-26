@@ -142,6 +142,12 @@
     <Compile Include="PP_InspecRec[수입검사 이력 조회].designer.cs">
       <DependentUpon>PP_InspecRec[수입검사 이력 조회].cs</DependentUpon>
     </Compile>
+    <Compile Include="PP_LotTracking[LOTTRACKING].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PP_LotTracking[LOTTRACKING].designer.cs">
+      <DependentUpon>PP_LotTracking[LOTTRACKING].cs</DependentUpon>
+    </Compile>
     <Compile Include="PP_STockHALBRec[재공 재고 입출고 이력] .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PP_InspecRec[수입검사 이력 조회].resx">
       <DependentUpon>PP_InspecRec[수입검사 이력 조회].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PP_LotTracking[LOTTRACKING].resx">
+      <DependentUpon>PP_LotTracking[LOTTRACKING].cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PP_STockHALBRec[재공 재고 입출고 이력] .resx">
       <DependentUpon>PP_STockHALBRec[재공 재고 입출고 이력] .cs</DependentUpon>

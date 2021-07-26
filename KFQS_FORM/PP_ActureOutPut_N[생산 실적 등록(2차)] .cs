@@ -45,7 +45,7 @@ namespace KFQS_Form
 
 
                 _GridUtil.InitializeGrid(this.grid2, true, true, false, "", false);
-                _GridUtil.InitColumnUltraGrid(grid2, "CHK",            "투입취소",       true, GridColDataType_emu.CheckBox, 100, 120,  Infragistics.Win.HAlign.Left,  true, false);
+                _GridUtil.InitColumnUltraGrid(grid2, "CHK",            "투입취소",       true, GridColDataType_emu.CheckBox, 100, 120,  Infragistics.Win.HAlign.Left,  true, true);
                 _GridUtil.InitColumnUltraGrid(grid2, "PLANTCODE",      "공장",           true, GridColDataType_emu.VarChar,  120, 120,  Infragistics.Win.HAlign.Left, false, false);
                 _GridUtil.InitColumnUltraGrid(grid2, "WORKCENTERCODE", "작업장 코드",    true, GridColDataType_emu.VarChar,  120, 120,  Infragistics.Win.HAlign.Left, false, false);
                 _GridUtil.InitColumnUltraGrid(grid2, "ORDERNO",        "작업지시번호",   true, GridColDataType_emu.VarChar,  180, 120,  Infragistics.Win.HAlign.Left,  true, false);
